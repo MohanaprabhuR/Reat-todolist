@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useState } from "react";
+import { TodoHeader } from "./components/todoheader";
+import { TodoFooter } from "./components/todofooter";
+import { TodoForm } from "./components/todoform";
+import { TodoList } from "./components/todolist";
 
 function App() {
+  const [messageList, setMessageList] = useState(["Milk", "Sugar", "Butter"]);
+
+  const addTodo = (message) => {
+    setMessageList([...messageList, message]);
+  };
+
+  const deleteTodo = (message) => {
+    let deleteMessageIndex = messageList.indexOf(message);
+    setMessageList([
+      ...messageList.slice(0, deleteMessageIndex),
+      ...messageList.slice(deleteMessageIndex + 1),
+    ]);
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <TodoHeader />
+      <TodoForm addTodo={addTodo} />
+      <TodoList messageList={messageList} deleteTodo={deleteTodo} />
+      <TodoFooter />
+    </>
   );
 }
 
