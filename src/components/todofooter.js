@@ -1,6 +1,6 @@
 export const TodoFooter = (props) => {
   return (
-    <div>
+    <div className="footer">
       <h3>Todo Footer</h3>
     </div>
   );
