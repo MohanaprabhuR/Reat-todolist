@@ -9,8 +9,7 @@ export const Todo = ({ message, deleteTodo }) => {
   };
 
   const handleSave = () => {
-    deleteTodo(message);
-    deleteTodo(editedMessage);
+    setEditedMessage(editedMessage);
     setIsEditing(false);
   };
 
@@ -23,7 +22,7 @@ export const Todo = ({ message, deleteTodo }) => {
           onChange={(event) => setEditedMessage(event.target.value)}
         />
       ) : (
-        <span id="todo__label ">{message + "  "}</span>
+        <span id="todo__label ">{editedMessage + "  "}</span>
       )}
       <div>
         {isEditing ? (
