@@ -88,12 +88,12 @@ span#todo__label {
   line-height: 1;
 }
 
-button#todo__delete {
+.todo__delete {
   border: 0;
   background-color: red;
   color: #fff;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 800;
   line-height: 1;
   padding: 8px;
   border-radius: 8px;
@@ -103,8 +103,22 @@ button#todo__delete {
   -o-border-radius: 8px;
 }
 
+.todo_save {
+  background-color: green;
+  margin-right: 4px;
+}
+
 .footer h3 {
   font-size: 16px;
   font-weight: 600;
   line-height: 1;
+}
+
+#todolist li.no-record {
+  font-size: 16px;
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.9);
+  line-height: 1;
+  display: flex;
+  justify-content: center;
 }
